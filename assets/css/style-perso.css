@@ -1,0 +1,42 @@
+/* Simulation du conteneur de titre Wikipédia */
+.wiki-content h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #a2a9b1;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    padding-bottom: 3px;
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-weight: normal;
+}
+
+/* Simulation du lien [modifier] à droite du titre */
+.wiki-content h2::after {
+    content: "[modifier | modifier le code]";
+    font-size: 0.6em;
+    color: #0645ad;
+    font-family: sans-serif;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Style pour les sous-titres h3 */
+.wiki-content h3 {
+    border-bottom: none;
+    font-size: 1.2em;
+    margin-top: 1.2em;
+}
+
+.wiki-content h3::after {
+    content: "[modifier]";
+    font-size: 0.5em;
+    margin-left: 10px;
+    color: #0645ad;
+    font-weight: normal;
+}
+
+main#content #markdown-toc {
+    display: none;
+}
+

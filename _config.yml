@@ -1,0 +1,14 @@
+title: Felly's OC
+email: ton-email@exemple.com
+description: Un site contenant l'ensemble des OCs de Felly.
+baseurl: "" 
+url: "https://IIBiniII.github.io"
+plugins:
+  - jekyll-toc
+kramdown:
+  auto_ids: true
+# Configuration de la collection
+collections:
+  cards:
+    output: true 
+    permalink: /OC/:path/

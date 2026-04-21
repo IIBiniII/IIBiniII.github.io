@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.nom }} - Mon Wiki</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="mediawiki">
+    <header>
+        <h1 id="firstHeading" style="border-bottom: 1px solid #a2a9b1; margin-bottom: 0.5em;">
+            {{ page.nom | default: "Index des Personnages" }}
+        </h1>
+    </header>
+
+    <div class="wiki-container" style="display: flex; gap: 20px;">
+        
+        <nav class="vector-sidebar" style="width: 200px; font-size: 0.85em; border-right: 1px solid #a2a9b1; padding-right: 15px;">
+            <div class="vector-menu-heading" style="font-weight: bold; padding: 10px 0;">
+                {{ page.nb-langues }} langues
+            </div>
+            <ul class="vector-menu-content-list" style="list-style: none; padding: 0;">
+                {% for lang in page.autres_langues %}
+                <li class="interlanguage-link interwiki-{{ lang.code }} mw-list-item" style="padding: 2px 0;">
+                    <a href="{{ lang.url }}" title="{{ lang.nom_fr }}" style="color: #0645ad; text-decoration: none;">
+                        <span>{{ lang.nom_local }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+
+        <main style="flex-grow: 1;">
+            <div class="mw-content-ltr">
+                <p>Cette page recense l'ensemble des entités et personnages disponibles dans ce wiki.</p>
+                
+                <div style="border: 1px solid #a2a9b1; background-color: #f8f9fa; padding: 15px; margin-top: 20px;">
+                    <h2 style="margin-top: 0; border-bottom: 2px solid {{ page.couleur | default: '#3366cc' }}; font-family: serif;">
+                        Liste des personnages (OC)
+                    </h2>
+                    
+                    <div class="category-links" style="column-count: 2; column-gap: 30px;">
+                        <ul style="list-style-type: square; margin-top: 10px;">
+                            {% for oc in page.liste_ocs %}
+                            <li style="margin-bottom: 8px;">
+                                <a href="{{ oc.lien }}" style="color: #0645ad; font-weight: bold; text-decoration: none;">
+                                    {{ oc.nom }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    {{ content }}
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer style="margin-top: 40px; padding-top: 10px; border-top: 1px solid #a2a9b1; font-size: 0.8em; color: #54595d;">
+    Dernière modification de cette page le {{ "now" | date: "%d %B %Y" }}.
+    </footer>
+</body>
+</html>

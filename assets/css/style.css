@@ -1,0 +1,26 @@
+body { font-family: sans-serif; line-height: 1.6; color: #202122; }
+
+.infobox {
+  float: right;
+  width: 280px;
+  border: 1px solid #a2a9b1;
+  background-color: #f8f9fa;
+  margin: 0 0 1em 1em;
+  padding: 5px;
+  font-size: 0.9em;
+}
+
+.infobox-title {
+  text-align: center;
+  font-weight: bold;
+  background-color: #cedff2;
+  padding: 5px;
+}
+
+.infobox-image { width: 100%; height: auto; }
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 5px; background: #eaecf0; }
+td { padding: 5px; }
+
+h1, h2 { border-bottom: 1px solid #a2a9b1; }
